@@ -1,0 +1,82 @@
+//
+// Component: Alert
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+@alert-margin-vertical:                         @global-margin;
+
+@alert-background:                              transparent;
+@alert-color:                                   @global-dark-color;
+
+@alert-success-background:                      transparent;
+@alert-success-color:                           @global-success-background;
+
+@alert-warning-background:                      transparent;
+@alert-warning-color:                           @global-warning-background;
+
+@alert-danger-background:                       transparent;
+@alert-danger-color:                            @global-danger-background;
+
+//
+// New
+//
+
+@alert-border:                                  #777;
+@alert-font-size:                               14px;
+@alert-font-style:                              italic;
+@alert-line-height:                             24px;
+
+@alert-success-border:                          @global-success-background;
+@alert-warning-border:                          @global-warning-background;
+@alert-danger-border:                           @global-danger-background;
+
+
+// Component
+// ========================================================================
+
+.hook-alert() {
+    border: 1px solid @alert-border;
+    font-size: @alert-font-size;
+    font-style: @alert-font-style;
+    line-height: @alert-line-height;
+}
+
+
+// Modifier: `uk-alert-success`
+// ========================================================================
+
+.hook-alert-success() { border-color: @alert-success-border; }
+
+
+// Modifier: `uk-alert-warning`
+// ========================================================================
+
+.hook-alert-warning() { border-color: @alert-warning-border; }
+
+
+// Modifier: `uk-alert-danger`
+// ========================================================================
+
+.hook-alert-danger() { border-color: @alert-danger-border; }
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-alert-misc() {
+
+    .uk-alert h1,
+    .uk-alert h2,
+    .uk-alert h3,
+    .uk-alert h4,
+    .uk-alert h5,
+    .uk-alert h6 { font-style: normal; }
+
+    .uk-alert .uk-close { opacity: 1; }
+    .uk-alert .uk-close:hover { opacity: 0.5; }
+
+}

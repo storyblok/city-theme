@@ -1,0 +1,139 @@
+//
+// Component: Contrast
+//
+// ========================================================================
+
+@contrast-color:                                 @global-contrast-color;
+@contrast-inverted-color:                        #333;
+
+@contrast-nav-side-hover-background:             transparent;
+@contrast-nav-side-active-background:            transparent;
+@contrast-nav-side-active-color:                 @contrast-color;
+
+@contrast-subnav-pill-hover-background:          transparent;
+@contrast-subnav-pill-hover-color:               @contrast-color;
+
+@contrast-tab-hover-border:                      rgba(0,0,0,0);
+@contrast-tab-hover-background:                  transparent;
+@contrast-tab-hover-color:                       @contrast-color;
+@contrast-tab-active-background:                 transparent;
+@contrast-tab-active-color:                      @contrast-color;
+
+@contrast-button-color:                          @contrast-color;
+@contrast-button-background:                     rgba(0,0,0,0);
+@contrast-button-hover-color:                    @global-dark-color;
+@contrast-button-hover-background:               @contrast-color;
+@contrast-button-active-background:              @contrast-color;
+@contrast-button-active-color:                   @global-dark-color;
+
+@contrast-button-primary-background:             @global-primary-background;
+@contrast-button-primary-hover-background:       @global-primary-hover-background;
+@contrast-button-primary-active-background:      @global-primary-active-background;
+
+@contrast-text-primary-color:                    @global-primary-background;
+
+//
+// New
+//
+
+@contrast-tab-hover-border:                      @contrast-tab-hover-color;
+@contrast-tab-active-border:                     @contrast-tab-active-color;
+
+@contrast-button-border:                         @contrast-color;
+@contrast-button-hover-border:                   fade(@contrast-color, 70%);
+
+
+// Base
+// ========================================================================
+
+.hook-contrast-base-code() { border-color: fade(@contrast-color, 20%); }
+
+
+// Nav
+// ========================================================================
+
+.hook-contrast-nav-side() { border-top-color: fade(@contrast-color, 20%); }
+.hook-contrast-nav-side-hover() {}
+.hook-contrast-nav-side-active() {}
+.hook-contrast-nav-side-header() {}
+.hook-contrast-nav-side-divider() {}
+
+
+// Subnav
+// ========================================================================
+
+.hook-contrast-subnav() {}
+.hook-contrast-subnav-hover() {}
+.hook-contrast-subnav-active() {}
+.hook-contrast-subnav-line-divider() {}
+.hook-contrast-subnav-pill-hover() {}
+.hook-contrast-subnav-pill-active() {}
+
+
+// Tab
+// ========================================================================
+
+.hook-contrast-tab() {}
+
+.hook-contrast-tab-hover() {
+
+    &::after { background-color: @contrast-tab-hover-border; }
+}
+
+.hook-contrast-tab-active() {
+
+    &::after { background-color: @contrast-tab-active-border; }
+
+}
+
+
+// List
+// ========================================================================
+
+.hook-contrast-list-line() {}
+
+
+// Form
+// ========================================================================
+
+.hook-contrast-form() {}
+.hook-contrast-form-focus() {}
+
+
+// Button
+// ========================================================================
+
+.hook-contrast-button() {
+
+    &:not(.uk-button-primary) { border-color: @contrast-button-border; }
+
+}
+
+.hook-contrast-button-hover() {
+
+    &:not(.uk-button-primary) { border-color: @contrast-button-hover-border; }
+
+}
+
+.hook-contrast-button-active() {}
+.hook-contrast-button-primary() {}
+
+.hook-contrast-button-primary-hover() {}
+.hook-contrast-button-primary-active() {}
+
+// Icon
+// ========================================================================
+
+.hook-contrast-icon-hover() {}
+.hook-contrast-icon-hover-hover() {}
+.hook-contrast-icon-button() {}
+.hook-contrast-icon-button-hover() {}
+.hook-contrast-icon-button-active() {}
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-contrast-misc() {
+
+}

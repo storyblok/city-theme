@@ -1,0 +1,6 @@
+{{ blok._editable }}
+<div class="uk-width-1-1 uk-width-large-{{ blok.width | default:'1-1' }} uk-row-first">
+  {% for item in blok.body %}
+    {% include item.component with blok: item %}
+  {% endfor %}
+</div>

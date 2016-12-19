@@ -1,0 +1,105 @@
+//
+// Component: Article
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+@article-margin-top:                            @global-grid-gutter;
+
+@article-title-font-size:                       38px;
+@article-title-line-height:                     46px;
+@article-title-font-weight:                     300;
+
+@article-meta-font-size:                        14px;
+@article-meta-line-height:                      20px;
+@article-meta-color:                            @global-muted-color;
+
+@article-lead-color:                            @global-dark-color;
+@article-lead-font-size:                        round((@global-font-size * 1.14)); // 16px
+@article-lead-line-height:                      round((@article-lead-font-size * 1.625)); // 26px
+@article-lead-font-weight:                      300;
+
+@article-divider-margin:                        @global-margin-large;
+@article-divider-border:                        @global-border;
+
+//
+// New
+//
+
+@article-padding:                               40px;
+@article-large-padding:                         70px;
+@article-large-margin-top:                      45px;
+
+@article-title-large-font-size:                 42px;
+@article-title-large-line-height:               48px;
+
+
+// Sub-object `uk-article-title`
+// ========================================================================
+
+.hook-article-title() {}
+
+
+// Sub-object `uk-article-meta`
+// ========================================================================
+
+.hook-article-meta() {
+
+    a { color: @article-meta-color; }
+
+    a:hover {
+        color: @global-link-hover-color;
+        text-decoration: none;
+    }
+
+}
+
+
+// Sub-object `uk-article-lead`
+// ========================================================================
+
+.hook-article-lead() { font-style: italic; }
+
+
+// Sub-object `uk-article-divider`
+// ========================================================================
+
+.hook-article-divider() {}
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-article-misc() {
+
+    .uk-article {
+        padding: @article-padding;
+        background: @global-background;
+    }
+
+    /* Tablet and bigger */
+    @media (min-width: @breakpoint-medium) {
+
+        .uk-article { padding: @article-large-padding; }
+
+        .uk-article + .uk-article { margin-top: @article-large-margin-top; }
+
+        .uk-article-title {
+            font-size: @article-title-large-font-size;
+            line-height: @article-title-large-line-height;
+        }
+
+    }
+
+
+    .uk-article-title a:hover { color: @global-muted-color; }
+
+    .uk-article .uk-subnav { font-style: italic; }
+
+    .uk-article .uk-subnav a:hover,
+    .uk-article .uk-subnav a:focus { text-decoration: underline; }
+
+}

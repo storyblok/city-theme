@@ -1,0 +1,18 @@
+{{ blok._editable }}
+<form data-blok-form class="uk-form">
+  <div class="uk-form-row">
+    <input type="text" placeholder="Email" name="message[email]" />
+  </div>
+  <div class="uk-form-row">
+    <textarea placeholder="Message" name="message[body]"></textarea>
+  </div>
+  <div class="uk-form-row">
+    <button type="submit" class="uk-button">Submit</button>
+  </div>
+  <div style="display: none;">
+    <input type="text" name="message[comment]" data-blok-form-comment />
+    <input type="text" name="message[comment_confirm]" />
+  </div>
+</form>
+
+

@@ -1,0 +1,122 @@
+//
+// Component: Panel
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+@panel-title-margin-bottom:                     @global-margin;
+@panel-title-font-size:                         20px;
+@panel-title-line-height:                       30px;
+@panel-title-font-weight:                       300;
+@panel-title-color:                             @global-dark-color;
+
+@panel-teaser-margin-bottom:                    @panel-box-padding;
+
+@panel-box-padding:                             35px;
+@panel-box-background:                          @global-background;
+@panel-box-color:                               @global-color;
+@panel-box-title-color:                         @global-dark-color;
+
+@panel-box-teaser-margin:                       -(@panel-box-padding);
+
+@panel-box-badge-top:                           10px;
+
+@panel-box-primary-background:                  @global-primary-background;
+@panel-box-primary-color:                       @global-contrast-color;
+@panel-box-primary-title-color:                 @global-contrast-color;
+
+@panel-box-secondary-background:                #F8F8F8;
+@panel-box-secondary-color:                     @global-color;
+@panel-box-secondary-title-color:               @global-dark-color;
+
+@panel-hover-padding:                           35px;
+@panel-hover-color:                             @global-color;
+@panel-hover-hover-color:                       @global-color;
+@panel-hover-hover-background:                  @global-background;
+@panel-hover-teaser-margin:                     -(@panel-hover-padding);
+
+@panel-hover-badge-top:                         0;
+
+@panel-header-title-border:                     @global-border;
+@panel-header-title-border-width:               2px;
+@panel-header-title-color:                      @global-dark-color;
+
+@panel-divider-gutter:                          @global-grid-gutter;
+@panel-divider-gutter-large:                    @global-grid-gutter-large;
+@panel-divider-border:                          @global-border;
+@panel-divider-border-width:                    2px;
+
+//
+// New
+//
+
+
+
+@panel-divider-font-family:                    inherit;
+@panel-divider-font-style:                     italic;
+
+
+// Sub-object: `uk-panel-title`
+// ========================================================================
+
+.hook-panel-title() {}
+
+
+// Sub-object: `uk-panel-badge`
+// ========================================================================
+
+.hook-panel-badge() {}
+
+
+// Modifier: `uk-panel-box`
+// ========================================================================
+
+.hook-panel-box() {}
+
+.hook-panel-box-hover() {}
+
+//
+// Sub-modifier: `uk-panel-box-primary`
+//
+
+.hook-panel-box-primary() {}
+
+.hook-panel-box-primary-hover() {}
+
+//
+// Sub-modifier: `uk-panel-box-secondary`
+//
+
+.hook-panel-box-secondary() {}
+
+.hook-panel-box-secondary-hover() {}
+
+
+// Modifier: `uk-panel-hover`
+// ========================================================================
+
+.hook-panel-hover() {}
+
+.hook-panel-hover-hover() {}
+
+
+// Modifier: `uk-panel-header`
+// ========================================================================
+
+.hook-panel-header() {}
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-panel-misc() {
+
+    .uk-panel-divider .uk-panel-title {
+        font-family: @panel-divider-font-family;
+        font-style: @panel-divider-font-style;
+    }
+
+}

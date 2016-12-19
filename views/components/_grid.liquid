@@ -1,0 +1,6 @@
+{{ blok._editable }}
+<div class="uk-grid uk-grid-match uk-margin-large" data-uk-grid-match>
+  {% for item in blok.body %}
+    {% include item.component with blok: item %}
+  {% endfor %}
+</div>

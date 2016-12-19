@@ -1,0 +1,49 @@
+{% set newsitems from stories starts_with: news, per_page: 3 %}
+
+<div class="tm-container-small">
+  {% for news in newsitems.data %}
+    {% include news.content.component with blok: news.content, title: news.name, date: news.created_at, id: news.id, style: 'overview' %}
+  {% endfor %}
+
+
+  <!-- Pagination: -->
+  {% if params.page %}
+    {% assign page = params.page | round %}
+  {% else %}
+    {% assign page = 1 %}
+  {% endif %}
+
+  {% assign range = 3 %}
+  {% assign total = newsitems.total | round | divided_by_ceil: 3 %}
+  {% assign page_index = page | minus: 1 %}
+  {% assign max_range = page_index | plus: range %}
+  {% assign min_range = page_index | minus: range %}
+
+  {% if total > 1 %}
+    <ul class="uk-pagination uk-margin-bottom-remove">
+      {% for i in (1..total) %}
+        {% if i <= max_range and i >= min_range %}
+          {% if i == page %}
+            <li class="uk-active"><span>{{ i }}</span></li>
+          {% else %}
+            <li>
+              <a href="?page={{ i }}">{{ i }}</a>
+            <li>
+          {% endif %}
+        {% elsif i == 1 %}
+          <li>
+              <a href="?page={{ i }}">{{ i }}</a>
+          </li>
+          <li><span>...</span></li>
+        {% elsif i == total %}
+          <li><span>...</span></li>
+          <li>
+              <a href="?page={{ total }}">{{ total }}</a>
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  {% endif %}
+</div>
+
+

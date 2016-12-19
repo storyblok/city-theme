@@ -1,0 +1,77 @@
+//
+// Component: Subnav
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+@subnav-margin-horizontal:                      20px;
+@subnav-color:                                  @global-color;
+@subnav-hover-color:                            @global-dark-color;
+@subnav-active-color:                           @global-dark-color;
+
+@subnav-line-border:                            @global-border;
+
+@subnav-pill-padding-horizontal:                11px;
+@subnav-pill-hover-background:                  transparent;
+@subnav-pill-hover-color:                       @global-color;
+@subnav-pill-active-background:                 @global-primary-background;
+@subnav-pill-active-color:                      @global-contrast-color;
+
+@subnav-disabled-color:                         @global-muted-color;
+
+//
+// New
+//
+
+
+
+@subnav-pill-border-radius:                     50px;
+@subnav-pill-hover-border:                      lighten(@subnav-pill-hover-color, 45%);
+@subnav-pill-active-border:                     @global-primary-background;
+@subnav-pill-font-family:                       @global-alternate-font-family;
+
+// Component
+// ========================================================================
+
+.hook-subnav() {}
+
+.hook-subnav-hover() {}
+
+.hook-subnav-active() {}
+
+
+// Modifier: `uk-subnav-line`
+// ========================================================================
+
+.hook-subnav-line-divider() {}
+
+
+// Modifier: `uk-subnav-pill`
+// ========================================================================
+
+.hook-subnav-pill() {
+    border: 1px solid transparent;
+    border-radius: @subnav-pill-border-radius;
+    font-family: @subnav-pill-font-family;
+    -webkit-transition: all 0.05s linear;
+    transition: all 0.05s linear;
+}
+
+.hook-subnav-pill-hover() { border-color: @subnav-pill-hover-border; }
+
+.hook-subnav-pill-active() { border-color: transparent; }
+
+
+// Disabled state
+// ========================================================================
+
+.hook-subnav-disabled() {}
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-subnav-misc() {}

@@ -1,0 +1,77 @@
+//
+// Component: Overlay
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+@overlay-panel-color:                           @global-contrast-color;
+
+@overlay-icon:                                  "";
+@overlay-icon-size:                             34px;
+@overlay-icon-color:                            @global-contrast-color;
+
+//
+// New
+//
+
+
+@overlay-button-color:                          @global-contrast-color;
+
+@overlay-button-hover-border:                   @overlay-button-hover-background;
+@overlay-button-hover-background:               @global-contrast-color;
+@overlay-button-hover-color:                    @global-color;
+
+
+// Sub-object `uk-overlay-panel`
+// ========================================================================
+
+.hook-overlay-panel() {
+
+    // Button
+    .uk-button:not(.uk-button-primary):not(.uk-button-success):not(.uk-button-danger) { color: @overlay-button-color; }
+
+    .uk-button:not(.uk-button-primary):not(.uk-button-success):not(.uk-button-danger):hover {
+        border-color: @overlay-button-hover-border;
+        background: @overlay-button-hover-background;
+        color: @overlay-button-hover-color;
+    }
+
+    .uk-button:not(.uk-button-primary):not(.uk-button-success):not(.uk-button-danger):active,
+    .uk-button:not(.uk-button-primary):not(.uk-button-success):not(.uk-button-danger).uk-active,
+    .uk-button:not(.uk-button-primary):not(.uk-button-success):not(.uk-button-danger):focus {
+        border-color: darken(@overlay-button-hover-border, 10%);
+        background: darken(@overlay-button-hover-background, 10%);
+        color: @overlay-button-hover-color;
+    }
+}
+
+
+// Sub-object `uk-overlay-background`
+// ========================================================================
+
+.hook-overlay-background() {}
+
+
+// Sub-object `uk-overlay-image`
+// ========================================================================
+
+.hook-overlay-image() {}
+
+
+// Sub-object `uk-overlay-icon`
+// ========================================================================
+
+.hook-overlay-icon() {
+    height: 34px;
+    width: 34px;
+    background: url("@{global-image-path}/overlay-plus.svg") 0 0 no-repeat;
+}
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-overlay-misc() {}

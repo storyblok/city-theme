@@ -1,0 +1,8 @@
+{{ blok._editable }}
+<div class="uk-panel">
+  <h1 class="uk-h2 uk-text-center-small">{{ blok.headline | default:'Headline' }}</h1>
+  <p class="uk-margin">{{ blok.body }}</p>
+  {% if blok.call_to_action %}
+    <h3 class="uk-text-center-medium"><a class="uk-link-reset" href="{{ blok.call_to_action_link }}"><i class="uk-icon-link"></i> {{ blok.call_to_action }}</a></h3>
+  {% endif %}
+</div>

@@ -1,0 +1,53 @@
+//
+// Component: Close
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+@close-size:                                    18px;
+
+@close-alt-padding:                             6px;
+@close-alt-background:                          @global-background;
+
+
+// Component
+// ========================================================================
+
+.hook-close() {
+    opacity: 0.5;
+    color: @global-contrast-color;
+}
+
+
+// Modifier: `uk-close-alt`
+// ========================================================================
+
+.hook-close-alt() {}
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-close-misc() {
+
+    .uk-close:after {
+        content: "";
+        height: 18px;
+        width: 18px;
+        background: url("@{global-image-path}/close.svg") 0 0 no-repeat;
+    }
+
+    .uk-close:hover,
+    .uk-close:focus {
+        opacity: 1;
+        color: @global-contrast-color;
+    }
+
+    .uk-alert-success .uk-close:after { background-image: url("@{global-image-path}/close-success.svg"); }
+    .uk-alert-warning .uk-close:after { background-image: url("@{global-image-path}/close-warning.svg"); }
+    .uk-alert-danger .uk-close:after { background-image: url("@{global-image-path}/close-danger.svg"); }
+
+}

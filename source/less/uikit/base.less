@@ -1,0 +1,178 @@
+//
+// Component: Base
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+@base-body-background:                          #f5f5f5;
+@base-body-font-family:                         @global-font-family;
+@base-body-font-size:                           @global-font-size;
+@base-body-line-height:                         @global-line-height;
+@base-body-color:                               @global-color;
+
+@base-link-color:                               @global-link-color;
+@base-link-hover-color:                         @global-link-hover-color;
+@base-link-hover-text-decoration:               none;
+@base-em-color:                                 #f0615c;
+@base-ins-background:                           #ffd;
+@base-ins-color:                                @global-color;
+@base-mark-background:                          #ffd;
+@base-mark-color:                               @global-dark-color;
+
+@base-margin-vertical:                          @global-margin;
+
+@base-heading-font-family:                      @global-alternate-font-family;
+@base-heading-font-weight:                      300;
+@base-heading-color:                            @global-dark-color;
+@base-heading-margin-top:                       @global-margin-large;
+@base-h1-font-size:                             round((@global-font-size * 2.6)); // 36px
+@base-h1-line-height:                           round((@base-h1-font-size * 1.27)); // 48px
+@base-h2-font-size:                             round((@global-font-size * 1.85)); // 26px
+@base-h2-line-height:                           round((@base-h2-font-size * 1.3)); // 34px
+@base-h3-font-size:                             round((@global-font-size * 1.57)); // 22px
+@base-h3-line-height:                           round((@base-h3-font-size * 1.45)); // 32px
+@base-h4-font-size:                             round((@global-font-size * 1.28)); // 18px
+@base-h4-line-height:                           round((@base-h4-font-size * 1.44)); // 26px
+@base-h5-font-size:                             round((@global-font-size * 1.14)); // 16px
+@base-h5-line-height:                           round((@base-h5-font-size * 1.5)); // 24px
+@base-h6-font-size:                             @global-font-size; // 14px
+@base-h6-line-height:                           round((@base-h6-font-size * 1.57)); // 22px
+
+@base-hr-border:                                @global-border;
+
+@base-blockquote-border:                        transparent;
+@base-blockquote-border-width:                  0;
+@base-blockquote-font-size:                     round((@global-font-size * 1.14)); // 18px
+@base-blockquote-line-height:                   round((@base-blockquote-font-size * 1.55)); // 28px
+
+@base-code-color:                               #f0615c;
+@base-code-font-size:                           12px;
+
+@base-pre-padding:                              30px;
+@base-pre-background:                           @global-background;
+@base-pre-color:                                @global-color;
+@base-pre-font-size:                            12px;
+@base-pre-line-height:                          18px;
+
+//
+// New
+//
+
+@base-code-border:                              @global-border;
+@base-pre-border:                               @global-border;
+@base-blockquote-icon:                          '\201C';
+@base-blockquote-icon-size:                     90px;
+@base-blockquote-font-family:                   'Playfair Display';
+
+
+// Body
+// ========================================================================
+
+.hook-base-body() {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+// Links
+// ========================================================================
+
+.hook-base-link() {}
+
+.hook-base-link-hover() {}
+
+
+// Text-level semantics
+// ========================================================================
+
+.hook-base-code() {
+    padding: 1px 6px 3px 6px;
+    border: 1px solid @base-code-border;
+    border-radius: 3px;
+    font-family: 'Roboto Mono';
+}
+
+
+// Headings
+// ========================================================================
+
+.hook-base-h() {}
+
+.hook-base-h1() {}
+
+.hook-base-h2() {}
+
+.hook-base-h3() {}
+
+.hook-base-h4() { font-weight: normal; }
+
+.hook-base-h5() { font-weight: normal; }
+
+.hook-base-h6() { font-weight: normal; }
+
+
+// Horizontal rules
+// ========================================================================
+
+.hook-base-hr() {}
+
+
+// Blockquotes
+// ========================================================================
+
+.hook-base-blockquote() {
+    text-align: center;
+    color: @global-dark-color;
+    font-weight: 300;
+}
+
+
+// Preformatted text
+// ========================================================================
+
+.hook-base-pre() {
+    border: 1px solid @base-pre-border;
+    border-radius: 3px;
+}
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-base-misc() {
+
+    small { font-size: 90%; }
+
+    mark { font-style: italic; }
+
+    blockquote {
+
+        position: relative;
+
+        &:before {
+            display: block;
+            left: -40px;
+            top: 10px;
+            position: absolute;
+            content: @base-blockquote-icon;
+            font-size: @base-blockquote-icon-size;
+            font-family: @base-blockquote-font-family;
+            font-style: normal;
+        }
+
+    }
+
+    /* Phone landscape and smaller*/
+    @media (max-width: @breakpoint-small-max) {
+
+        blockquote:before {
+            left: -20px;
+            font-size: (@base-blockquote-icon-size - 20px);
+        }
+
+    }
+
+}

@@ -1,0 +1,6 @@
+{{ blok._editable }}
+<h1 class="uk-heading-large">{{ blok.text | markdown }}</h1>
+
+{% get 'demo' %}
+---- {{ element.story.content.component }}
+{% endget %}

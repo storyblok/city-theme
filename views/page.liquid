@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StoryBlok - Demo</title>
+  <link href="{{ 'assets/theme.css' | asset_url }}" rel="stylesheet" type="text/css">
+  <link rel="preconnect" href="//cdnjs.cloudflare.com" crossorigin>
+  <style type="text/css">
+    @font-face {
+      font-family: 'FontAwesome';
+      src: url("//cdnjs.cloudflare.com/ajax/libs/uikit/2.27.2/fonts/fontawesome-webfont.woff2") format('woff2'), url("//cdnjs.cloudflare.com/ajax/libs/uikit/2.27.2/fonts/fontawesome-webfont.woff") format("woff");
+      font-weight: normal;
+      font-style: normal;
+    }
+  </style>
+</head>
+<body>
+  {% set global from story id:global %}
+
+  {% if global.content._editable %}
+    <div>
+      <a class="uk-button settings-btn" href="/global">Global Layout Settings</a>
+    </div>
+  {% endif %}
+
+  <div class="tm-background uk-cover-background" class="uk-cover-background"{% if global.content.background %} style="background-image: url({{ global.content.background }});"{% endif %}>
+    <div class="uk-container uk-container-center">
+
+      <div class="tm-header uk-flex uk-flex-middle uk-flex-column">
+
+        <a class="tm-logo uk-hidden-small" href="/">
+          <img src="{{ global.content.logo }}" alt="">
+        </a>
+
+        <nav class="uk-navbar ">
+
+          <a class="uk-navbar-brand uk-visible-small" href="/">
+            <img class="uk-responsive-height" src="{{ global.content.logo }}" alt="">
+          </a>
+
+          <div class="uk-hidden-small">
+            <ul class="uk-navbar-nav">
+              {% for navitem in global.content.navitems %}
+                {% assign link = navitem.link | url %}
+                <li>
+                  <a href="{{ link }}">{{ navitem.name }}</a>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+
+          <div class="uk-navbar-flip uk-visible-small">
+            <a href="#offcanvas" class="uk-navbar-toggle" data-uk-offcanvas></a>
+          </div>
+
+        </nav>
+
+      </div>
+
+
+      <div id="tm-main" class="tm-main uk-grid" data-uk-grid-match data-uk-grid-margin>
+
+        <main class="uk-width-1-1">
+          <div class="pk-system-messages"></div>
+
+          {% if story.content.component != 'layout_setting' %}
+            {% include story.content.component with blok: story.content, title: story.name, date: story.created_at %}
+          {% else %}
+            {{ global.content._editable }}
+            <div>
+              Click here to edit the settings
+            </div>
+            {% assign settings_page = true %}
+          {% endif %}
+        </main>
+
+
+      </div>
+
+
+    </div>
+  </div>
+
+  <div id="tm-footer" class="tm-footer uk-block uk-block-default">
+    <div class="uk-container uk-container-center">
+
+      <section class="uk-grid uk-grid-match" data-uk-grid-margin>
+        <div class="uk-width-medium-1-2">
+
+          <div class="uk-panel">
+            <ul class="uk-subnav uk-subnav-line">
+              {% for navitem in global.content.footer_right %}
+                {% assign link = navitem.link | url %}
+                <li>
+                  <a href="{{ link }}">
+                    {{ navitem.name }}
+                  </a>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+
+        </div>
+        <div class="uk-width-medium-1-2">
+
+          <div class="uk-panel">
+            <ul class="uk-subnav uk-subnav-line uk-icon-small uk-align-medium-right">
+              {% for navitem in global.content.footer_left %}
+                {% assign link = navitem.link | url %}
+                <li>
+                  <a href="{{ link }}">
+                    {% if navitem.icon %}
+                      <i class="{{ navitem.icon }}"></i>
+                    {% endif %}
+                    {{ navitem.name }}
+                  </a>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+  <div id="offcanvas" class="uk-offcanvas">
+    <div class="uk-offcanvas-bar uk-offcanvas-bar-flip">
+
+      <div class="uk-panel uk-text-center">
+        <a href="/">
+          <img src="{{ global.content.contrast_logo }}" alt="">
+        </a>
+      </div>
+
+      <ul class="uk-nav uk-nav-offcanvas">
+        {% for navitem in global.content.navitems %}
+          {% assign link = navitem.link | url %}
+          <li>
+            <a href="{{ link }}">
+              {{ navitem.name }}
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+
+    </div>
+  </div>
+
+  <script type="text/javascript" src="{{ 'assets/js/scripts.js' | asset_url }}"></script>
+  <script type="text/javascript" src="//app.storyblok.com/storyblok-latest.js"></script>
+  <script type="text/javascript">
+
+    storyblok.init({
+      accessToken: 'k77r3Gi74MD8NB1ilj0rzwtt'
+    });
+
+    storyblok.on('change', function() {
+      location.reload(true);
+    });
+
+    storyblok.pingEditor(function() {
+      if (storyblok.inEditor) {
+        storyblok.enterEditmode();
+      }
+    });
+
+  </script>
+</body>

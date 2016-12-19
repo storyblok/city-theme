@@ -1,0 +1,53 @@
+//
+// Component: Breadcrumb
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+@breadcrumb-font-size:                          round((@global-font-size * 0.85)); // 12px / 14px
+
+@breadcrumb-divider:                            "|";
+@breadcrumb-divider-margin:                     12px;
+
+@breadcrumb-disabled-color:                     fade(@global-muted-color, 50%);
+
+//
+// New
+//
+
+@breadcrumb-font-family:                        @global-alternate-font-family;
+@breadcrumb-text-transform:                     uppercase;
+
+
+// Component
+// ========================================================================
+
+.hook-breadcrumb() {
+    font-family: @breadcrumb-font-family;
+    color: @global-muted-color;
+    text-transform: @breadcrumb-text-transform;
+}
+
+
+// Items
+// ========================================================================
+
+.hook-breadcrumb-divider() { color: @global-muted-color; }
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-breadcrumb-misc() {
+
+    .uk-breadcrumb > li > a { color: @global-muted-color; }
+
+    .uk-breadcrumb > li > a:hover {
+        color: @global-color;
+        text-decoration: none;
+    }
+
+}

@@ -1,0 +1,20 @@
+{{ blok._editable }}
+<article class="uk-article">
+  <div class="uk-width-medium-4-6 uk-container-center uk-text-center">
+    {% if blok.top_image %}
+      <img class="uk-margin-large-top" src="{{ blok.top_image }}" />
+    {% endif %}
+
+    <h1 class="uk-margin-small-bottom">{{ blok.title | default:'Title' }}</h1>
+    {% if blok.subtitle %}
+      <div class="uk-text-muted">{{ blok.subtitle }}</div>
+    {% endif %}
+
+    <p>{{ blok.body | default:'Lorem ipsum' }}</p>
+
+    {% if blok.bottom_image %}
+      <img class="uk-margin-top uk-margin-large-bottom" src="{{ blok.bottom_image }}" />
+    {% endif %}
+
+  </div>
+</article>

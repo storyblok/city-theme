@@ -1,0 +1,42 @@
+{% if style != 'overview' %}
+<div class="tm-container-small">
+{% endif %}
+
+  {{ blok._editable }}
+  <article class="uk-article">
+
+    <div class="tm-article-teaser uk-display-block">
+      {% if blok.image %}
+        <img src="{{ blok.image }}" alt="" />
+      {% endif %}
+    </div>
+
+    <h1 class="uk-article-title">{{ title }}</h1>
+
+    <p class="uk-article-meta">
+      Written by {{ blok.author }} on <time datetime="{{ date }}">{{ date | date: "%h %Y" }}</time>
+    </p>
+
+    <div class="uk-margin">
+      <p class="uk-article-lead">
+        {{ blok.intro }}
+      </p>
+
+      {% if style != 'overview' %}
+        {{ blok.body | markdown }}
+      {% endif %}
+
+      {% if style == 'overview' %}
+        <div class="uk-margin-large-top">
+          <ul class="uk-subnav">
+            <li><a href="{{ id | story_url }}">Read more</a></li>
+          </ul>
+        </div>
+      {% endif %}
+    </div>
+
+  </article>
+
+{% if style != 'overview' %}
+</div>
+{% endif %}
