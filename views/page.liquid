@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>StoryBlok - Demo</title>
+  <title>Storyblok - {{ story.name }}</title>
   <link href="{{ 'assets/theme.css' | asset_url }}" rel="stylesheet" type="text/css">
   <link rel="preconnect" href="//cdnjs.cloudflare.com" crossorigin>
   <style type="text/css">
@@ -16,7 +16,7 @@
   </style>
 </head>
 <body>
-  {% set global from story id:global %}
+  {% set global from story id:'global' %}
 
   {% if global.content._editable %}
     <div>
@@ -68,9 +68,11 @@
             {% include story.content.component with blok: story.content, title: story.name, date: story.created_at %}
           {% else %}
             {{ global.content._editable }}
-            <div>
-              Click here to edit the settings
-            </div>
+            <article class="uk-article uk-text-center">
+              <h1>Settings</h1>
+              <h2>This page is for setting the global layout and nav items.</h2>
+              <p>Click here to edit the settings in the Storyblok sidebar.</p>
+            </article>
             {% assign settings_page = true %}
           {% endif %}
         </main>

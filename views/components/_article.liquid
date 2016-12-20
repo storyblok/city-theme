@@ -15,6 +15,9 @@
     {% if blok.bottom_image %}
       <img class="uk-margin-top uk-margin-large-bottom" src="{{ blok.bottom_image }}" />
     {% endif %}
-
   </div>
+
+  {% for item in blok.bottom %}
+    {% include item.component with blok: item %}
+  {% endfor %}
 </article>

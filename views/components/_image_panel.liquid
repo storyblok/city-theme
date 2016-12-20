@@ -1,0 +1,14 @@
+{{ blok._editable }}
+<div class="uk-panel uk-text-center">
+  <div class="uk-overlay uk-overlay-hover">
+    <img src="{{ blok.image | default:'//placehold.it/300x300' }}" alt="" />
+    <div class="uk-overlay-panel uk-overlay-icon uk-overlay-background uk-overlay-fade"></div>
+    <a class="uk-position-cover" href="{{ blok.image | default:'//placehold.it/300x300' }}" data-uk-lightbox></a>
+  </div>
+
+  {% if blok.caption %}
+    <h3 class="uk-h4">
+      <a class="uk-link-reset" href="#">{{ blok.caption }}</a>
+    </h3>
+  {% endif %}
+</div>

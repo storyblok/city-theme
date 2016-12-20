@@ -1,4 +1,4 @@
-{% set newsitems from stories starts_with: news, per_page: 3 %}
+{% set newsitems from stories starts_with:'news', per_page:3 %}
 
 <div class="tm-container-small">
   {% for news in newsitems.data %}
