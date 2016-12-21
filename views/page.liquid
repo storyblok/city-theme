@@ -62,7 +62,13 @@
       <div id="tm-main" class="tm-main uk-grid" data-uk-grid-match data-uk-grid-margin>
 
         <main class="uk-width-1-1">
-          <div class="pk-system-messages"></div>
+          <div class="pk-system-messages">
+            {% if params._storyblok %}
+              <div class="uk-text-center uk-margin-bottom">
+                <a class="uk-button uk-button-primary uk-button-small" href="https://github.com/storyblok/city-theme" target="_blank">Checkout the repository</a> if you want to edit the template.
+              </div>
+            {% endif %}
+          </div>
 
           {% if story.content.component != 'layout_setting' %}
             {% include story.content.component with blok: story.content, title: story.name, date: story.created_at %}
