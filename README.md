@@ -2,7 +2,7 @@
 
 This is one of the themes for Storyblok - the cms as a service platform.
 
-It's using gulp and browsersync to proxy the requests to Storyblok and you can edit the theme live.
+It's using gulp and browsersync to proxy the requests to Storyblok so you can edit the theme live.
 
 Checkout the [theme documentation](https://www.storyblok.com/docs/Rendering-Service/Theme-Documentation) to know more about the template syntax.
 
