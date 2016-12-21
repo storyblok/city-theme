@@ -1,4 +1,4 @@
-node_modules
-token.js
-views/assets/js/scripts.js
-views/assets/theme.css
+/node_modules
+/token.js
+/views/assets/js/scripts.js
+/views/assets/theme.css
