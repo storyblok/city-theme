@@ -63,7 +63,7 @@ gulp.task('browsersync', function() {
   gulp.watch('source/js/**/*.js', ['scripts'])
 })
 
-gulp.task('default', ['browsersync'], function() {
+gulp.task('default', ['styles', 'scripts', 'browsersync'], function() {
   return watch('./views/**/*')
     .pipe(blok(config.blok))
 })
