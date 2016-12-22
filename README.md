@@ -10,6 +10,7 @@ Checkout the [theme documentation](https://www.storyblok.com/docs/Rendering-Serv
 
 1. Clone the repository ```git clone https://github.com/storyblok/city-theme```
 2. Rename ```_token.js``` to ```token.js``` and insert your theme token. You can find your theme token in the space settings of the [Storyblok app](https://app.storyblok.com).
-3. Run ```npm install```
-4. Run ```gulp```
-5. Ready! You can now edit the templates in ```views``` or defining css in the ```source``` folder.
+3. Replace INSERT_SPACE_ID with your space id and INSERT_YOUR_DOMAIN with your domain in ```config.js```. You can find your space id and domain in the space settings.
+4. Run ```npm install```
+5. Run ```gulp```
+6. Ready! You can now edit the templates in ```views``` or defining css in the ```source``` folder.

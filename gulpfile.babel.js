@@ -6,14 +6,14 @@ const browserSync = require('browser-sync')
 const source = require('vinyl-source-stream')
 const browserify = require('browserify')
 const reload = browserSync.reload
-const config = {
-  "blok": {
-    "apiVersion": 2,
-    "themeId": "40032",
-    "domain": "city.me.storyblok.com",
-    "apiKey": require('./token'),
-    "basePath": "views"
-  }
+const config = require('./config.js')
+
+if (config.blok.domain == 'INSERT_YOUR_DOMAIN') {
+  config.blok.domain = 'city.me.storyblok.com'
+}
+
+if (config.blok.themeId == 'INSERT_SPACE_ID') {
+  config.blok.themeId = '40032'
 }
 
 gulp.task('deploy', function() {
