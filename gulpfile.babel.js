@@ -52,6 +52,7 @@ gulp.task('browsersync', function() {
         }
       }
     },
+    https: fs.existsSync('./cert.js') ? require('./cert') : false,
     reloadDelay: 1000,
     notify: true,
     open: true,
