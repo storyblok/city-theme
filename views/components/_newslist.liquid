@@ -2,7 +2,7 @@
 
 <div class="tm-container-small">
   {% for news in newsitems.data %}
-    {% include news.content.component with blok: news.content, title: news.name, date: news.created_at, id: news.id, style: 'overview' %}
+    {% include news.content.component with blok: news.content, title: news.name, date: news.created_at, id: news.uuid, style: 'overview' %}
   {% endfor %}
 
 
