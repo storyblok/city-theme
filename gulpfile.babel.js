@@ -7,6 +7,7 @@ const source = require('vinyl-source-stream')
 const browserify = require('browserify')
 const reload = browserSync.reload
 const config = require('./config.js')
+const fs = require('fs')
 
 if (config.blok.domain == 'INSERT_YOUR_DOMAIN') {
   config.blok.domain = 'city.me.storyblok.com'
