@@ -6,7 +6,7 @@
     <a class="uk-position-cover" href="{{ blok.image | default:'//placehold.it/300x300' }}" data-uk-lightbox></a>
   </div>
 
-  {% if blok.caption %}
+  {% if blok.caption != blank %}
     <h3 class="uk-h4">
       <a class="uk-link-reset" href="#">{{ blok.caption }}</a>
     </h3>

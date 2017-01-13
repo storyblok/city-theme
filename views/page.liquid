@@ -118,7 +118,7 @@
                 {% assign link = navitem.link | url %}
                 <li>
                   <a href="{{ link }}">
-                    {% if navitem.icon %}
+                    {% if navitem.icon != blank %}
                       <i class="{{ navitem.icon }}"></i>
                     {% endif %}
                     {{ navitem.name }}
