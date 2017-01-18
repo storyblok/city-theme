@@ -1,4 +1,5 @@
 /node_modules
 /token.js
+/cert.js
 /views/assets/js/scripts.js
 /views/assets/theme.css
